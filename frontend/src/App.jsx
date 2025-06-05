@@ -15,10 +15,15 @@ import MyCourses from './pages/Teacher/MyCourses';
 import StudentsEnrolled from './pages/Teacher/StudentsEnrolled';
 import Navbar from './components/Student/Navbar'
 
- 
 
- 
-function App () {
+function App() {
+  return (
+    <>
+    <h1 className="text-3xl font-bold ">
+    Hello world!
+  </h1>
+    <ThemeToggle/>
+    </>
 
   const isTeacherRoute = useMatch('/teacher/*')
 
