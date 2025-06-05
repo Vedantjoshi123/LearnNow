@@ -1,7 +1,7 @@
 import React from 'react'
 import { assets } from '../../assets/assets'
 import { Link } from 'react-router-dom'
-import { useClerk, UserButton, useUser,user} from '@clerk/clerk-react';
+import { useClerk, UserButton, useUser} from '@clerk/clerk-react';
 
 function Navbar() {
 
