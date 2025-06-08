@@ -17,21 +17,35 @@ function Navbar() {
       <img src={assets.logo} alt='Logo' className='w-28 lg:w32 cursor-pointer' />
       <div className='hidden md:flex items-center gap-5 text=gray-500' >
         <div className='flex items-center gap-5'> 
-          
-            <Link to='/my-enrollments'>Become Educator</Link>
+            { user && <>
+           
+              <Link to=''>Become Educator</Link>
           | <Link to='/my-enrollments'>My Enrollments</Link>
+           </>
+            }
         </div>
-        <button onClick={() => openSignIn} className='bg-blue-600 text-white px-5 py-2 rounded-full'>
+        {user ?
+        <UserButton/>:
+          <button onClick={() => openSignIn()} className='bg-blue-600 text-white px-5 py-2 rounded-full'>
           Create Account
         </button>
+      }
+      
       </div>
       {/*for phone screens*/}
       <div className='md:hidden flex items-center gap-2 sm:gap-5 text-gray-500'>
-          <div>
-            <Link to='/my-enrollments'>Become Educator</Link>
-           | <Link to='/my-enrollments'>My Enrollments</Link>
+          <div className='flex items-center gap-1 sm:gap-2 max-sm:text-xs'>
+         { user && <>
+           
+              <Link to=''>Become Educator</Link>
+          | <Link to='/my-enrollments'>My Enrollments</Link>
+           </>
+            }
           </div>
-          <button><img src={assets.user_icon} alt="" /></button>
+          {
+            user ? <UserButton/> :   <button onClick={() => openSignIn()}><img src={assets.user_icon} alt="" /></button>
+          }
+        
       </div>
     </div>
   )
