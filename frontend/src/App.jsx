@@ -1,5 +1,4 @@
 import './App.css'
-import ThemeToggle from './components/ThemeToggle'
 import {Route,Routes, useMatch} from 'react-router-dom'
 import Home from './pages/Student/Home'
 import CoursesList from './pages/Student/CoursesList'
@@ -8,7 +7,6 @@ import CourseDetails from './pages/Student/CourseDetails';
 import Player from './pages/Student/Player';
 // import {  } from "module";
 import Loading from './components/Student/Loading';
-import Educator from './pages/Teacher/Educator';
 import Dashboard from './pages/Teacher/Dashboard';
 import AddCourse from './pages/Teacher/AddCourse';
 import MyCourses from './pages/Teacher/MyCourses';
@@ -20,10 +18,9 @@ function App() {
   const isTeacherRoute = useMatch('/teacher/*')
 
   return (
-    <div className='text-default min-h-screen bg-white'>
-      {!isTeacherRoute && <Navbar />}
+<div className="text-default min-h-screen bg-[var(--color-bg)] transition-colors duration-300">
 
-      
+      {!isTeacherRoute && <Navbar />}
       <Routes>
         <Route path='/' element={<Home/>}/>
         <Route path='/course-list' element={<CoursesList/>}/>
@@ -32,7 +29,7 @@ function App() {
         <Route path='/my-enrollments' element={<MyEnrollments/>}/>
         <Route path='/player/:courseId' element={<Player/>}/>
         <Route path='/loading/:path' element={<Loading/>}/>
-        <Route path='/teacher' element={<Dashboard/>}>
+        <Route path='/educator' element={<Dashboard/>}>
               <Route path='add-course' element={<AddCourse/>}/>
               <Route path='my-courses' element={<MyCourses/>}/>
               <Route path='student-enrolled' element={<  StudentsEnrolled/>}/>
