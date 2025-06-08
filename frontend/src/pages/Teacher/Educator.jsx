@@ -1,8 +1,15 @@
 import React from 'react'
+import Navbar from '../../components/Teacher/Navbar'
+import { Outlet } from 'react-router-dom'
 
 function Educator() {
   return (
-    <div>Educator Page - Teacher</div>
+    <div className='text-default min-h-screen bg-white'>
+      <Navbar />
+      <div>
+        {<Outlet/>}
+      </div>
+    </div>
   )
 }
 
